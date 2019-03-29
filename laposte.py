@@ -10,8 +10,9 @@ class BlogSpider(scrapy.Spider):
 
 
     def parse(self, response):
-
+						
         for link in response.css('div.uiSerpResults div#serp-list.uiSerpList div.coData a.uiSerpAddress.uaLv3'):
 
             yield {'adresse': link.css('a ::text').extract_first()}
+            
 
